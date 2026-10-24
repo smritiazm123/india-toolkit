@@ -1,0 +1,59 @@
+{
+  "name": "india-toolkit",
+  "version": "1.0.0",
+  "description": "Build Indian GST invoices in one call, plus validators (PAN, GSTIN, Aadhaar, IFSC, UPI, mobile), lakh/crore formatting, parsing and amount in words. Zero dependencies.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --clean",
+    "test": "npm run build && node --test test/index.test.js",
+    "prepublishOnly": "npm test"
+  },
+  "keywords": [
+    "india",
+    "gst",
+    "invoice",
+    "gstin",
+    "cgst",
+    "sgst",
+    "igst",
+    "billing",
+    "pan",
+    "aadhaar",
+    "ifsc",
+    "upi",
+    "inr",
+    "rupees",
+    "lakh",
+    "crore",
+    "amount-in-words",
+    "validation"
+  ],
+  "author": "Smriti",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
+  }
+}
